@@ -5,6 +5,7 @@ import cors from "cors"
 
 import { protect } from "./modules/auth"
 import { createNewUser, signin } from "./handlers/user"
+import {createValidationRules, signinValidationRules,validate} from "./middleware/user"
 
 const app = express();
 
@@ -22,7 +23,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api', protect, router)
-app.post('/user', createNewUser)
-app.post('/signin', signin)
+app.post('/user', createValidationRules(), validate,createNewUser)
+app.post('/signin', signinValidationRules(), validate, signin)
 
 export default app
