@@ -1,0 +1,26 @@
+{
+  "name": "express-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/index.ts",
+    "format": "npx prisma format",
+    "migrate": "npx prisma migrate dev"
+  },
+  "author": "EshaanAgg",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^4.4.0",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.0",
+    "nodemon": "^2.0.20",
+    "prism": "^4.1.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  }
+}
